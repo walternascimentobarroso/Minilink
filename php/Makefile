@@ -85,7 +85,7 @@ bash: ## Open bash in php container
 ## PHP commands:
 .PHONY: phpcs
 phpcs: ## Run PHPCS on staged PHP files
-	@FILES=$$(git diff --cached --name-only --diff-filter=AM | grep '\.php$$'); \
+	@FILES=$$(git diff --cached --name-only --diff-filter=AM | grep '\.php$$' | sed 's:^php/::'); \
 	if [ -z "$$FILES" ]; then \
 		echo "No staged PHP files to check."; \
 	else \
@@ -96,7 +96,7 @@ phpcs: ## Run PHPCS on staged PHP files
 
 .PHONY: phpcbf
 phpcbf: ## Run PHPCBF on staged PHP files
-	@FILES=$$(git diff --cached --name-only --diff-filter=AM | grep '\.php$$'); \
+	@FILES=$$(git diff --cached --name-only --diff-filter=AM | grep '\.php$$' | sed 's:^php/::'); \
 	if [ -z "$$FILES" ]; then \
 		echo "No staged PHP files to fix."; \
 	else \
@@ -107,7 +107,7 @@ phpcbf: ## Run PHPCBF on staged PHP files
 
 .PHONY: phpstan
 phpstan: ## Run PHPStan on staged PHP files
-	@FILES=$$(git diff --cached --name-only --diff-filter=AM | grep '\.php$$'); \
+	@FILES=$$(git diff --cached --name-only --diff-filter=AM | grep '\.php$$' | sed 's:^php/::'); \
 	if [ -z "$$FILES" ]; then \
 		echo "No staged PHP files to analyse."; \
 	else \

@@ -1,0 +1,13 @@
+{
+    "name": "walternascimentobarroso/minilink",
+    "autoload": {
+        "psr-4": {
+            "MiniLink\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Walter Nascimento Barroso"
+        }
+    ]
+}

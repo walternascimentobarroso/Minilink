@@ -1,5 +1,7 @@
 <?php
 
+namespace MiniLink;
+
 class MiniLink
 {
     private string $file = 'urls.txt';

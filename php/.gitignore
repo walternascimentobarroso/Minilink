@@ -1,0 +1,4 @@
+.env
+urls.txt
+vendor/
+composer.lock
