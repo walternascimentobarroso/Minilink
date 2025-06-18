@@ -1,5 +1,0 @@
-9d8179|https://exemplo.com
-703fe7|https://exemplo.com
-18c948|https://exemplo.com
-c7e330|https://exemplo.com
-5723f1|https://dev.to/walternascimentobarroso/using-phpcodesniffer-installation-configuration-and-practical-examples-10nl
