@@ -1,0 +1,11 @@
+services:
+    python:
+        container_name: minilink-python
+        build: .docker/python
+        volumes:
+            - .:/app
+        env_file:
+            - .env
+        ports:
+            - "80:8000"
+        command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
