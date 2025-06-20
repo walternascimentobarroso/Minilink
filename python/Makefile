@@ -80,6 +80,24 @@ logs: ## See LOG in container syncdb
 bash: ## Open bash in syncdb container
 	$(DOCKER_COMPOSE) exec syncdb bash
 
+.PHONY: black flake8 mypy pylint lint
+
+## Python commands:
+black: ## Run black formatter
+	$(DOCKER_COMPOSE) exec python black .
+
+flake8: ## Run flake8 linter
+	$(DOCKER_COMPOSE) exec python flake8 .
+
+mypy: ## Run mypy type checker
+	$(DOCKER_COMPOSE) exec python mypy .
+
+pylint: ## Run pylint linter
+	$(DOCKER_COMPOSE) exec python pylint **/*.py
+
+lint: black flake8 mypy pylint ## Run all linters and formatters
+
+
 # Ignore make target errors for commands like `make import `
 .PHONY: %
 %:

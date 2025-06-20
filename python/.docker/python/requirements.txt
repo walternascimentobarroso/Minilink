@@ -1,2 +1,6 @@
 fastapi
 uvicorn
+black
+flake8
+mypy
+pylint
